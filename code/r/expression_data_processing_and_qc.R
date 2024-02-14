@@ -1,4 +1,4 @@
-# expression_data_processing.R
+# expression_data_processing_and_qc.R
 
 
 # What the script does?

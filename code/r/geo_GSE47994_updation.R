@@ -188,8 +188,7 @@ celmap %>% dplyr::filter(str_detect(inhouse, "_"))
 # 3 A1764-009_b.CEL.gz rep_GSM1164303 A1764-009_b
 # 4 A1764-040_b.CEL.gz rep_GSM1164334 A1764-040_b
 
-write_tsv(celmap, file = str_c(out_data,"GSE47994_to_inhouse_sample_map2.tsv"))
-
+write_tsv(celmap, file = str_c(out_data,"GSE47994_to_inhouse_sample_map.tsv"))
 
 
 # ==============================================================================
@@ -263,7 +262,7 @@ identical(names(inhouse_x)[-1], inhouse_metadata_x$`characteristics: Sample_id`)
 # inhouse_metadata_x[,1:2] %>% as.data.frame()
 
 # write_tsv(x=inhouse_x %>% dplyr::mutate(across(-"ID_REF",~round(.x, digits = 5))),
-#           file = str_c(out_tables,"GSE47994_rma_renormalized_with_replicates_rounded.tsv"))
+#           file = str_c(out_data,"GSE47994_rma_renormalized_with_replicates_rounded.tsv"))
 # Samples were missing due to manual conversion of tsv to excel format.
 # Hence writing directly in excel format.
 # Another replicate only matrix is also generated as requested by GEO team during the update process.
@@ -271,7 +270,7 @@ identical(names(inhouse_x)[-1], inhouse_metadata_x$`characteristics: Sample_id`)
 write_xlsx(
   x = inhouse_x %>%
     dplyr::mutate(across(-"ID_REF",~round(.x, digits = 5))),
-  path = str_c(out_tables,"GSE47994_rma_renormalized_with_replicates.xlsx"),
+  path = str_c(out_data,"GSE47994_rma_renormalized_with_replicates.xlsx"),
   format_headers = FALSE,
   use_zip64 = FALSE
 )
@@ -280,13 +279,13 @@ write_xlsx(
   x = inhouse_x %>%
     dplyr::select("ID_REF", "rep_GSM1164303", "rep_GSM1164334") %>%
     dplyr::mutate(across(-"ID_REF",~round(.x, digits = 5))),
-  path = str_c(out_tables,"GSE47994_rma_renormalized_replicates_only.xlsx"),
+  path = str_c(out_data,"GSE47994_rma_renormalized_replicates_only.xlsx"),
   format_headers = FALSE,
   use_zip64 = FALSE
 ) # GEO team asked for expression data only for missing replicates !!!!!!!!!!!!
 
 write_tsv(x=inhouse_metadata_x,
-          file = str_c(out_tables,"GSE47994_metadata_updated.tsv"))
+          file = str_c(out_data,"GSE47994_metadata_updated.tsv"))
 
 
 # ==============================================================================

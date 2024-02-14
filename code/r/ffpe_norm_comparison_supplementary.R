@@ -379,6 +379,8 @@ pdf(file = paste0(out_figures, "supp_ffpe_norm_comparison.pdf"),
 ggpubr::ggarrange( #ggdplyr::arrange(
   plotlist = p,
   labels = c("a","b","c","d"),
+  #  "colon_mas"    "colon_rma"    "pancreas_mas" "pancreas_rma"
+  #  colon: frozen, pancreas: ffpe
   ncol = 2, nrow = 4#, widths = c(.4,.6), vjust = 1.1
 )
 

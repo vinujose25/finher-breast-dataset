@@ -1,4 +1,4 @@
-# sample_characteristics_curation.R
+# experiment_metadata_curation.R
 
 
 # What the script does?
@@ -11,7 +11,6 @@
 # >>>>>>>>>>>>>>>>
 #
 # 1. Experimental data curation
-# 2. Clinical data curation
 
 
 
