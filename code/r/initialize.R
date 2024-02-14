@@ -82,12 +82,14 @@ source("code/r/functions.R")
 #       b. The feasibility RMA and MAS normalization of FFPE derived
 #          - expression profiles were compared.
 #       c. QC stats and plots generated.
-# 6. supplementary_ffpe_norm_comparison.R
+# 6. ffpe_norm_comparison_supplementary.R
 #       a. MAS and RMA normalization comparison on independent datasets.
+# 7. ffpe_norm_comparison_finher_cocorrelation.R
+#       a. MAS-RMA normalization comparison w.r.t ER pathway gene co-correlation structure.
 # 7. technical_validation.R
-#       a. Technical validation using technical replicates.
-# 8. figures_tables_data.R:
-#       a. Generate journal specific figures, tables and dataset.
+#       a. IHC vs PAM50 subtyping comparison
+#       b. ER/HER2 IHC status prediction from respective mRNAs
+#       c. Technical validation using technical replicates.
 # 9. geo_GSE47994_updation.R
 #       a. Update existing GSE47994 with two technical replicates missing in
 #          - original submission.
@@ -97,9 +99,8 @@ source("code/r/functions.R")
 # 10. geo_reprocessed_submission.R
 #       a. Prepares the following gene expression matrices and sample qc data
 #          - to include in GSE47998 as supplementary.
-#           a.1 RMA and MAS normalized data - all samples + all probesets
-#           a.2 RMA and MAS normalized data - all samples + probeset filtering
-#           a.3 RMA and MAS normalized data - sample filtering + probeset filtering
+#           a.1 RMA and MAS normalized data - all samples
+#           a.2 RMA and MAS normalized data - sample filtered
 #
 # ==============================================================================
 
