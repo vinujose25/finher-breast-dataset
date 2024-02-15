@@ -371,15 +371,11 @@ sample_qc_norm1[["rma"]] <- sample_qc_norm1[["rma"]] %>%
   dplyr::mutate(CEL_filename = str_replace(CEL_filename, "\\.CEL\\.gz", "")) %>%
   left_join(finher_assay %>% select(CEL_filename, Subject_Id, Batch),
             by = "CEL_filename") 
-# %>%
-#   left_join(finher_clin, by = "Subject_Id")
 
 sample_qc_norm1[["mas"]] <- sample_qc_norm1[["mas"]] %>%
   dplyr::mutate(CEL_filename = str_replace(CEL_filename, "\\.CEL\\.gz", "")) %>%
   left_join(finher_assay %>% select(CEL_filename, Subject_Id, Batch),
             by = "CEL_filename") 
-# %>%
-#   left_join(finher_clin, by = "Subject_Id")
 
 
 
@@ -951,15 +947,11 @@ sample_qc_norm2[["rma"]] <- sample_qc_norm2[["rma"]] %>%
   dplyr::mutate(CEL_filename = str_replace(CEL_filename, "\\.CEL\\.gz", "")) %>%
   left_join(finher_assay %>% select(CEL_filename, Subject_Id, Batch),
             by = "CEL_filename") 
-# %>%
-#   left_join(finher_clin, by = "Subject_Id")
 
 sample_qc_norm2[["mas"]] <- sample_qc_norm2[["mas"]] %>%
   dplyr::mutate(CEL_filename = str_replace(CEL_filename, "\\.CEL\\.gz", "")) %>%
   left_join(finher_assay %>% select(CEL_filename, Subject_Id, Batch),
             by = "CEL_filename") 
-# %>%
-#   left_join(finher_clin, by = "Subject_Id")
 
 
 
