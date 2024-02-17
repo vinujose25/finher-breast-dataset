@@ -513,17 +513,17 @@ p3 <- sample_qc_norm1$mas %>%
 
 
 
-# Probeset QC plot
+# Probeset QC plot (after sample filtering)
 
 # https://www.researchgate.net/figure/Mean-variance-relationship-Here-we-show-the-sample-variance-across-lanes-in-the-liver_fig2_24282377
-p4 <- pset_qc_norm1$mas %>%
+p4 <- pset_qc_norm2$mas %>%
   ggplot(aes(x = Pset_GE_Avg, y = Pset_GE_Var)) +
   geom_point(aes(color = PVAC_Status), shape = 1) +
   geom_smooth(aes(linetype = PVAC_Status), color = "gray20", method = "lm", se = FALSE) +
   theme_bw() +
   labs(x = "Probeset mean", y = "Probeset varaiance") +
   scale_linetype_manual(values = c("Selected" = "solid", "Discarded" = "dashed")) +
-  scale_color_manual(values = c("Selected" = "gray50", "Discarded" = "goldenrod")) +
+  scale_color_manual(values = c("Selected" = "gray50", "Discarded" = "brown")) +
   guides(linetype = "none", color = guide_legend(title = "Probeset\nPVAC status")) +
   theme(panel.grid = element_blank())
 
@@ -619,17 +619,17 @@ p3 <- sample_qc_norm1$rma %>%
 
 
 
-# Probeset QC plot
+# Probeset QC plot (after sample filtering)
 
 # https://www.researchgate.net/figure/Mean-variance-relationship-Here-we-show-the-sample-variance-across-lanes-in-the-liver_fig2_24282377
-p4 <- pset_qc_norm1$rma %>%
+p4 <- pset_qc_norm2$rma %>%
   ggplot(aes(x = Pset_GE_Avg, y = Pset_GE_Var)) +
   geom_point(aes(color = PVAC_Status), shape = 1) +
   geom_smooth(aes(linetype = PVAC_Status), color = "gray20", method = "lm", se = FALSE) +
   theme_bw() +
   labs(x = "Probeset mean", y = "Probeset varaiance") +
   scale_linetype_manual(values = c("Selected" = "solid", "Discarded" = "dashed")) +
-  scale_color_manual(values = c("Selected" = "gray50", "Discarded" = "goldenrod")) +
+  scale_color_manual(values = c("Selected" = "gray50", "Discarded" = "brown")) +
   guides(linetype = "none", color = guide_legend(title = "Probeset\nPVAC status")) +
   theme(panel.grid = element_blank())
 
