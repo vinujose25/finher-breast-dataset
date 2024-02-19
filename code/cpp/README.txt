@@ -2,14 +2,15 @@
 Introduction
 ============
 
-Fast C++ implementation of Wilcoxon test-based probeset detection calling algorithm for PM-probe (Perfect-Match-probe) only HG-U219 array using anti-genomic probes as a background. The anti-genomic probes were introduced as a cost-effective replacement for the traditional MM (Mis-Match) probes as a background.
-Due to the lack of MM probes, the detection calling algorithm associated with MAS5 normalization will not work. Hence an updated algorithm is necessary for detection calling.
+Fast C++ implementation of Wilcoxon test-based probeset detection calling algorithm for PM-probe (Perfect-Match-probe) only HG-U219 array using anti-genomic probes as a background. Anti-genomic probes were introduced as a cost-effective replacement for traditional MM (Mis-Match) probes to measure background signals. Due to the lack of MM probes, the detection calling algorithm associated with MAS5 normalization will not work. Hence an updated algorithm is necessary for detection calling.
 
-The R implementation of the Wilcoxon test performs poorly in looping algorithms.
-Parallel implementation of the Wilcoxon test in R would be a solution, but it has not been attempted as the code is intended to run in a single-core processor. The current implementation supports only single-core computation.
+The Wilcoxon-test-based detection calling algorithm essentially loops through all the probesets per expression profile and hence performs poorly in R. Parallel implementation of the Wilcoxon test in R would be a solution, but it has not been attempted as the code is intended to run in a single-core processor. The current implementation supports only single-core computation.
 
-C++ implementation of the Wilcoxn test available from the alglib library, version 3.8.2, was used (see https://www.alglib.net/).
-The R scripts associated with this detection calling algorithm, "dabg2call.r" and "mas5gccall.r", are available in the folder, code/r/.
+C++ implementation of the Wilcoxon test available from the Alglib library, version 3.8.2, was used (see https://www.alglib.net/).
+
+R and C++ connection:
+The idea is to compile shared objects from C++ code which can be accessed by R during runtime via dynamic load (dyn.load()) and a wrapper function defined in R (.Call()). The wrapper functions are defined in the script functions_cpp.R, which is available in the folder code/r/.
+
 
 =========================================
 Description of the file/folder/C++ script
